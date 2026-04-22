@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ck2g1dbq0ftuw"]
+
+[ext_resource type="PackedScene" uid="uid://c3npgprfx7dy3" path="res://parts/arena/wall.tscn" id="1_73ib7"]
+[ext_resource type="Script" uid="uid://cn3swbn83rwqy" path="res://screens/game/main.gd" id="1_sfxjc"]
+[ext_resource type="PackedScene" uid="uid://clviqda8a1cvm" path="res://parts/arena/boulder02.tscn" id="2_csnvk"]
+[ext_resource type="PackedScene" uid="uid://bqbuyddr8dux6" path="res://parts/arena/boulder01.tscn" id="3_g2ffr"]
+[ext_resource type="PackedScene" uid="uid://d1pysshjlneof" path="res://parts/player/player.tscn" id="4_njsao"]
+[ext_resource type="PackedScene" uid="uid://5x7umxfncme7" path="res://parts/game_over_menu/game_over_menu.tscn" id="8_tamld"]
+
+[node name="Main" type="Node" unique_id=1558992108]
+script = ExtResource("1_sfxjc")
+
+[node name="Arena" type="Node2D" parent="." unique_id=1526620781]
+
+[node name="Wall" parent="Arena" unique_id=1362234427 instance=ExtResource("1_73ib7")]
+
+[node name="Wall2" parent="Arena" unique_id=1087361297 instance=ExtResource("1_73ib7")]
+position = Vector2(1303, 697)
+rotation = -3.14159
+
+[node name="Wall3" parent="Arena" unique_id=1829694962 instance=ExtResource("1_73ib7")]
+position = Vector2(-29, 692)
+scale = Vector2(1, -1)
+
+[node name="Wall4" parent="Arena" unique_id=389099771 instance=ExtResource("1_73ib7")]
+position = Vector2(1281, 5)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Boulder" parent="Arena" unique_id=939403062 instance=ExtResource("2_csnvk")]
+position = Vector2(31, 313)
+
+[node name="Boulder2" parent="Arena" unique_id=1398577824 instance=ExtResource("3_g2ffr")]
+position = Vector2(1018, 438)
+
+[node name="Boulder3" parent="Arena" unique_id=298583931 instance=ExtResource("3_g2ffr")]
+position = Vector2(326, 871)
+
+[node name="Boulder4" parent="Arena" unique_id=1007655100 instance=ExtResource("3_g2ffr")]
+position = Vector2(633, -145)
+
+[node name="Boulder5" parent="Arena" unique_id=1336623803 instance=ExtResource("2_csnvk")]
+position = Vector2(973, 902)
+rotation = 1.19687
+
+[node name="OuterWalls" type="Polygon2D" parent="Arena" unique_id=850616858]
+position = Vector2(0, -1)
+color = Color(0.176471, 0.172549, 0.180392, 1)
+invert_enabled = true
+invert_border = 880.2
+polygon = PackedVector2Array(-207, -229, 589, -296, 1395, -254, 1637, -17, 1655, 701, 1491, 956, 1113, 1072, 178, 1029, -248, 956, -379, 276)
+
+[node name="Player" parent="." unique_id=1033972056 instance=ExtResource("4_njsao")]
+position = Vector2(625, 304)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1770291850]
+
+[node name="GameOverMenu" parent="CanvasLayer" unique_id=1098909248 instance=ExtResource("8_tamld")]
+visible = false
+
+[node name="TimerUI" type="CenterContainer" parent="CanvasLayer" unique_id=118240198]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer/TimerUI" unique_id=273830079]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1232"
+horizontal_alignment = 1
+
+[connection signal="died" from="Player" to="." method="_on_player_died"]

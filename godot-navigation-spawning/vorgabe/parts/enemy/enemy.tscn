@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://fi3mjcqh4sgj"]
+
+[ext_resource type="Script" uid="uid://coo41bcsg8f8n" path="res://parts/enemy/enemy.gd" id="1_0wpse"]
+[ext_resource type="Texture2D" uid="uid://blhshi548mko6" path="res://assets/sprites/enemies/enemy01.png" id="2_fevrv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b66ix"]
+radius = 20.0
+height = 44.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibelr"]
+radius = 33.0606
+
+[node name="Enemy" type="CharacterBody2D" unique_id=803583327 groups=["enemy"]]
+collision_layer = 5
+script = ExtResource("1_0wpse")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1266285088]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_b66ix")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=673445182]
+position = Vector2(0, -6)
+scale = Vector2(3, 3)
+texture = ExtResource("2_fevrv")
+
+[node name="PlayerDetectionArea" type="Area2D" parent="." unique_id=1833501788]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectionArea" unique_id=651824446]
+shape = SubResource("CircleShape2D_ibelr")
+
+[connection signal="body_entered" from="PlayerDetectionArea" to="." method="_on_player_detection_area_body_entered"]
