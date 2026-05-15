@@ -170,5 +170,5 @@ vframes = 3
 
 [node name="Coin" type="Sprite2D" parent="." unique_id=245182712]
 position = Vector2(360.00003, 130)
-scale = Vector2(3, 3)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_ojtye")

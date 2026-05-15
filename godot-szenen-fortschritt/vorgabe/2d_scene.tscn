@@ -167,7 +167,7 @@ tile_set = SubResource("TileSet_d21ai")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=951086740]
 position = Vector2(360.00003, 130)
-scale = Vector2(3, 3)
+scale = Vector2(0.4, 0.4)
 script = ExtResource("2_2vxbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2050814417]

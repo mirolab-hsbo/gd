@@ -1,0 +1,4 @@
+Die Assets wurden aus folgenden Quellen bezogen (Creative-Commons-CC0-License):
+- Player: https://kenney.nl/assets/platformer-characters
+- Tilemap: https://kenney.nl/assets/tiny-town
+- Coin: https://kenney.nl/assets/puzzle-pack-2
