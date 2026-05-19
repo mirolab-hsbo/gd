@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dchjrcysu5a5j"]
+
+[ext_resource type="Script" uid="uid://drxr0yj26s3ar" path="res://character_movement.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cep5sn230pk7d" path="res://player_tilesheet.png" id="2_i3pqv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3r34k"]
+radius = 35.0
+height = 112.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1323400611]
+script = ExtResource("1_onrkg")
+speed = 1000.0
+
+[node name="Label" type="Label" parent="." unique_id=417456579]
+offset_left = -31.0
+offset_top = -86.0
+offset_right = 49.0
+offset_bottom = -63.0
+text = "Münzen: 0"
+
+[node name="PlayerTilesheet" type="Sprite2D" parent="." unique_id=40756922]
+texture = ExtResource("2_i3pqv")
+hframes = 9
+vframes = 3
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=130474137]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1460114218]
+position = Vector2(2, 8)
+shape = SubResource("CapsuleShape2D_3r34k")

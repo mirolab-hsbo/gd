@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dg664f45o6jwd"]
+
+[ext_resource type="Script" uid="uid://cx42016uf8i4p" path="res://coin_spawner.gd" id="1_7h776"]
+[ext_resource type="PackedScene" uid="uid://bco7i06yolf7v" path="res://coin.tscn" id="2_7dcau"]
+
+[node name="CoinSpawner" type="Node2D" unique_id=1375634672]
+script = ExtResource("1_7h776")
+coin_object = ExtResource("2_7dcau")
+
+[node name="Positions" type="Node2D" parent="." unique_id=1235741188]
+
+[node name="Timer" type="Timer" parent="." unique_id=1514408686]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=998999426]
+spawn_path = NodePath("..")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

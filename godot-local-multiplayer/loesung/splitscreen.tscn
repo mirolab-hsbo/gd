@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://d12vakde7x0gk"]
+
+[ext_resource type="PackedScene" uid="uid://dx0mr6t5t537e" path="res://2d_scene.tscn" id="1_ibj7l"]
+[ext_resource type="Script" uid="uid://b3awe38gydh87" path="res://splitscreen.gd" id="1_isxrr"]
+[ext_resource type="Script" uid="uid://b21ajh6ludtjn" path="res://player_camera.gd" id="3_wnyay"]
+
+[node name="Splitscreen" type="Node2D" unique_id=259154810]
+script = ExtResource("1_isxrr")
+
+[node name="ViewportContainer" type="HBoxContainer" parent="." unique_id=1243943134]
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 1035.0
+offset_bottom = 514.0
+
+[node name="LeftViewportContainer" type="SubViewportContainer" parent="ViewportContainer" unique_id=1445725480]
+layout_mode = 2
+
+[node name="LeftViewport" type="SubViewport" parent="ViewportContainer/LeftViewportContainer" unique_id=1585121624]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Scene" parent="ViewportContainer/LeftViewportContainer/LeftViewport" unique_id=68264856 instance=ExtResource("1_ibj7l")]
+
+[node name="LeftCamera" type="Camera2D" parent="ViewportContainer/LeftViewportContainer/LeftViewport" unique_id=1517823766]
+script = ExtResource("3_wnyay")
+
+[node name="ColorRect" type="ColorRect" parent="ViewportContainer" unique_id=1807721864]
+layout_mode = 2
+
+[node name="RightViewportContainer" type="SubViewportContainer" parent="ViewportContainer" unique_id=1509244556]
+layout_mode = 2
+
+[node name="RightViewport" type="SubViewport" parent="ViewportContainer/RightViewportContainer" unique_id=999375398]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="RightCamera" type="Camera2D" parent="ViewportContainer/RightViewportContainer/RightViewport" unique_id=567156634]
+script = ExtResource("3_wnyay")
