@@ -202,9 +202,5 @@ player_id = 2
 [node name="PlayerTilesheet" parent="Player2" index="1" unique_id=40756922]
 texture = ExtResource("4_ait2m")
 
-[node name="GlobaleKamera" type="Camera2D" parent="." unique_id=1001655914]
-position = Vector2(652, 237)
-zoom = Vector2(0.5, 0.5)
-
 [editable path="CoinSpawner"]
 [editable path="Player2"]
