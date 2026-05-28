@@ -11,11 +11,9 @@ height = 112.0
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 1
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_i3pqv"]
-properties/0/path = NodePath("../Label:text")
-properties/0/spawn = true
-properties/0/replication_mode = 1
+properties/1/path = NodePath("Label:text")
+properties/1/spawn = true
+properties/1/replication_mode = 1
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1323400611]
 script = ExtResource("1_onrkg")
@@ -41,7 +39,3 @@ shape = SubResource("CapsuleShape2D_3r34k")
 
 [node name="PositionMultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1261351783]
 replication_config = SubResource("SceneReplicationConfig_onrkg")
-
-[node name="CoinMultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1594779198]
-root_path = NodePath("../PositionMultiplayerSynchronizer")
-replication_config = SubResource("SceneReplicationConfig_i3pqv")
